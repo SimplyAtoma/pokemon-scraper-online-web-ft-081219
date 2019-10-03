@@ -13,7 +13,7 @@ class Pokemon
   
   def self.find(id, db)
      db.execute("SELECT * FROM pokemon WHERE id = #{id}").map do |row|
-      Pokemon.new(:id = row[0],:name row[1],:type row[2],:db db)
+      Pokemon.new(id: row[0],name: row[1],type: row[2],db: db)
     end.first
   end 
 end
